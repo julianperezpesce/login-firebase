@@ -22,7 +22,9 @@ export class AuthService {
     this.leerToken();
   }
 
-  logout() {}
+  logout() {
+    localStorage.removeItem('token');
+  }
 
   login( usuario: UserModel) {
     
@@ -86,7 +88,7 @@ export class AuthService {
   isAuthenticated(): boolean {
 
     return this.userToken.length > 2;
-    
+
   } 
 
 }
